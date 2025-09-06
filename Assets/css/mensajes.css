@@ -1,0 +1,61 @@
+/* Dropzone */
+.dropzone {
+  border: 2px dashed rgba(255, 255, 255, 0.2);
+  border-radius: 14px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .2s, background-color .2s;
+}
+
+.dropzone.is-drag {
+  border-color: #0dcaf0;
+  background: rgba(13, 202, 240, 0.08);
+}
+
+/* Previsualización */
+.uploader-preview .preview-item img {
+  display: block;
+}
+
+.uploader-preview .preview-item {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Burbujas del hilo (ayuda visual, opcional) */
+#thread .bg-dark {
+  background: #1f232a !important;
+}
+
+#thread .bg-primary {
+  background: #0d6efd !important;
+}
+
+.uploader-preview .preview-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+.uploader-preview .preview-item video,
+.uploader-preview .preview-item audio {
+  max-width: 240px;
+  display: block;
+}
+
+.notif-item {
+  display: flex;
+  gap: .75rem;
+  padding: .75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .08)
+}
+
+.notif-item .tit {
+  font-weight: 600
+}
+
+.notif-item .meta {
+  font-size: .8rem;
+  opacity: .7
+}

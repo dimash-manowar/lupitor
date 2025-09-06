@@ -1,0 +1,60 @@
+/* ====== Tarjetas destacadas (hero cards) ====== */
+.feature-card{
+  position:relative; overflow:hidden; border-radius:16px;
+  background:linear-gradient(135deg,#111827,#0b1220);
+  border:1px solid #223047; min-height:170px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.feature-card:hover{ transform:translateY(-3px); box-shadow:0 12px 24px rgba(0,0,0,.35); border-color:#34578c; }
+.feature-card .bg-thumb{
+  position:absolute; inset:0; opacity:.25; background-position:center; background-size:cover;
+  filter:saturate(1.1) contrast(1.05) blur(0px);
+}
+.feature-card .shine{
+  position:absolute; inset:-120%; background:radial-gradient(600px 220px at var(--x,50%) var(--y,50%), rgba(255,255,255,.12), transparent 60%);
+  pointer-events:none; transition:opacity .2s ease; opacity:0;
+}
+.feature-card:hover .shine{ opacity:1; }
+.feature-card .content{ position:relative; z-index:2; }
+.feature-card .badge{ backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,.15); }
+
+/* ====== Tarjetas de media (imagen arriba, texto abajo) ====== */
+.media-card{
+  background:#0f1622; border:1px solid #223047; border-radius:14px; overflow:hidden;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.media-card:hover{ transform:translateY(-2px); border-color:#3c6bb3; box-shadow:0 10px 22px rgba(0,0,0,.3); }
+.media-thumb{ aspect-ratio: 4 / 3; background:#0b1220; position:relative; }
+.media-thumb img, .media-thumb video{ width:100%; height:100%; object-fit:cover; display:block; }
+.media-body{ padding:10px 12px; }
+.media-title{ color:#e8edf7; font-weight:600; font-size:14.5px; margin:0; }
+.media-meta{ color:#93a4bd; font-size:12px; }
+
+/* Chips/contadores */
+.chip{ display:inline-flex; align-items:center; gap:6px; padding:4px 8px; border-radius:999px;
+       background:#0b1220; border:1px solid #25324b; color:#cfe3ff; font-size:12px; }
+
+/* Botones suaves */
+.btn-soft{
+  background:#122136; color:#dce9ff; border:1px solid #2a3b5a;
+}
+.btn-soft:hover{ background:#19304f; color:#fff; border-color:#425e8f; }
+
+/* Pequeño helper para iconos en tarjetas */
+.icon-xl{ font-size:28px; line-height:1; }
+.bg-dark h1{
+  color: #e8edf7;
+  font-size: 35px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+.carousel .carousel-caption{
+  left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+  padding: 1rem 1.25rem 1.25rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+}

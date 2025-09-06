@@ -1,0 +1,11 @@
+/* Masonry (Eventos) */
+.evt-masonry{ column-count:1; column-gap:1rem; }
+@media (min-width:576px){ .evt-masonry{ column-count:2; } }
+@media (min-width:992px){ .evt-masonry{ column-count:3; } }
+@media (min-width:1400px){ .evt-masonry{ column-count:4; } }
+.evt-masonry .mitem{ break-inside:avoid; -webkit-column-break-inside:avoid; margin:0 0 1rem; display:inline-block; width:100%; }
+
+/* Clamps (si no lo tienes ya) */
+.line-clamp-2, .line-clamp-3{ display:-webkit-box; -webkit-box-orient:vertical; overflow:hidden; }
+.line-clamp-2{ -webkit-line-clamp:2; }
+.line-clamp-3{ -webkit-line-clamp:3; }

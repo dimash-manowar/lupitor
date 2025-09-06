@@ -1,0 +1,56 @@
+/* ===== HERO BERRIOZAR ===== */
+:root{
+  --hero-bg:#0f0f12;         /* fondo base */
+  --hero-accent:#8bc34a;     /* acento sutil */
+  --hero-grad1:#8bc34a;
+  --hero-grad2:#4cc3ff;
+  --hero-square:#1a1a1f;     /* color casilla */
+  --hero-square2:#101014;    /* color casilla alt */
+}
+
+/* full-bleed ya lo tienes; usamos el wrapper existente */
+
+/* Lienzo del hero */
+.hero-berri{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(76,195,255,.15), transparent 60%),
+    radial-gradient(900px 500px at 10% 110%, rgba(139,195,74,.12), transparent 60%),
+    var(--hero-bg);
+  color:#fff;
+}
+
+/* Tablero decorativo (no interfiere con el contenido) */
+.hero-berri .hero-board{
+  position:absolute; inset:0;
+  background:
+    linear-gradient(45deg, var(--hero-square) 25%, transparent 25%) 0 0/48px 48px,
+    linear-gradient(45deg, transparent 75%, var(--hero-square) 75%) 0 0/48px 48px,
+    linear-gradient(45deg, transparent 75%, var(--hero-square) 75%) 24px 24px/48px 48px,
+    linear-gradient(45deg, var(--hero-square) 25%, var(--hero-square2) 25%) 24px 24px/48px 48px;
+  opacity:.18;
+  mix-blend-mode: lighten;
+  pointer-events:none;
+}
+
+/* Título con degradado bonito y accesible */
+.hero-title{
+  line-height:1.1;
+  background: linear-gradient(90deg, var(--hero-grad1), var(--hero-grad2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow: 0 0 .01px rgba(255,255,255,.0001); /* suaviza rendering */
+}
+
+/* KPIs */
+.hero-kpis i{ color: var(--hero-grad2); }
+
+/* Espaciado vertical */
+@media (min-width: 992px){
+  .hero-berri .container{ padding-top: 4.5rem; padding-bottom: 4.5rem; }
+}
+
+/* Reduce efectos si el usuario lo pide */
+@media (prefers-reduced-motion: reduce){
+  .hero-berri .hero-board{ animation: none; }
+}

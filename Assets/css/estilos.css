@@ -1,0 +1,100 @@
+/* Assets/css/estilos.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    color: #e2e2e2;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    color: #ddd;
+    transition: color 0.3s;
+}
+.header{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.header .fondo img{
+    background-image: url('Assets/img/ajedrez.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+.header .fondo h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.header .fondo p{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+.navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+header .bg-opacity-75 {
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+
+
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+footer {
+    background-color: #1e1e1e;
+    color: #aaa;
+}
+
+footer small {
+    font-size: 0.9rem;
+}
+/* EJERCICIOS HOME */
+#ejercicios-publicos { --gap:16px; }
+#ejercicios-publicos .slider-track{
+  display:grid; grid-auto-flow:column; gap:var(--gap);
+  overflow-x:auto; scroll-snap-type:x mandatory; scroll-behavior:smooth; padding-bottom:8px;
+}
+#ejercicios-publicos .slider-track > .ej-card{ scroll-snap-align:start; min-width:0; }
+@media (max-width:575.98px){ #ejercicios-publicos .slider-track{ grid-auto-columns:100%; } }
+@media (min-width:576px) and (max-width:991.98px){ #ejercicios-publicos .slider-track{ grid-auto-columns:calc((100% - var(--gap))/2); } }
+@media (min-width:992px){ #ejercicios-publicos .slider-track{ grid-auto-columns:calc((100% - 2*var(--gap))/3); } }
+.ej-card{ background:#0f1115; color:#e8eaf0; border:1px solid #1b2130; border-radius:14px; padding:12px; display:flex; flex-direction:column; }
+.ej-card .board-wrap{ display:flex; justify-content:center; padding:10px 0; }
+.ej-board{ width:300px; max-width:100%; }
+.chessboard-63f37 img,
+.exercise-board img {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+

@@ -1,0 +1,91 @@
+.full-bleed{
+  position:relative;
+  left:50%; right:50%;
+  margin-left:-50vw;
+  margin-right:calc(-50vw + 24px); /* aire derecha */
+  width:100vw;
+}
+
+.testi-swiper{
+  width:100%;                /* clave: NO 100vw */
+  overflow:visible;
+  perspective:1200px;
+  padding-bottom:24px;
+  direction:ltr;
+  box-sizing:border-box;
+  position: relative;
+}
+
+.testi-swiper .swiper-wrapper{
+  align-items:center;
+  overflow:visible;
+}
+
+
+.testi-swiper .swiper-slide{
+  width:270px;
+  display:flex; justify-content:center;
+  will-change:transform,opacity;
+}
+
+@media (max-width:1399.98px){ .testi-swiper .swiper-slide{ width:240px; } }
+@media (max-width:991.98px){  .testi-swiper .swiper-slide{ width:220px; } }
+
+.testi-card{
+  background:#1f1f1f; color:#fff;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:1rem;
+}
+/* Envoltorio que crea el hueco a la derecha y recorta el “sobrante” */
+.edge-pad {
+  box-sizing: border-box;
+  overflow: hidden;           /* recorta lo que desborda por la derecha */
+}
+.edge-pad--24 { padding-right: 24px; }  /* ajusta 16–32 a gusto */
+
+/* (opcional debug) pinta en verde la zona de hueco para verlo 1s */
+.edge-pad--24::after{
+  content:"";
+  position:absolute; inset:0 0 0 auto; width:24px;
+  pointer-events:none;
+  background: transparent;
+  animation: showPad .9s ease 1;
+}
+@keyframes showPad { from{ background: rgba(0,255,0,.15); } to{ background: transparent; } }
+/* Slide invisible que solo aporta ancho */
+:root{ --edge-gap:24px; } /* cambia 12–32px a gusto */
+
+.gap-slide{
+  flex:0 0 var(--edge-gap);
+  width:var(--edge-gap)!important;
+  min-width:var(--edge-gap);
+  pointer-events:none;
+  opacity:0; visibility:hidden;
+}
+
+
+/* Hueco simétrico a izquierda y derecha del carrusel */
+.testi-swiper .swiper-wrapper::before,
+.testi-swiper .swiper-wrapper::after{
+  content: "";
+  flex: 0 0 24px;     /* ← ajusta 12–32px a tu gusto */
+}
+
+/* Asegura que el padding cuenta y no se “sale” del 100% */
+.testi-swiper{
+  width: 100%;
+  box-sizing: border-box;
+  overflow: visible;
+}
+/* Arrastre fiable y sin overlays molestos */
+.testi-swiper{ position:relative; z-index:1; touch-action: pan-y; }
+.testi-nav{ position:relative; z-index:5; }
+.testi-swiper .swiper-slide{ cursor: grab; }
+.testi-swiper .swiper-slide:active{ cursor: grabbing; }
+
+/* Evita selección/arrastre de imágenes y texto dentro de la tarjeta */
+.testi-card, .testi-card *{ user-select: none; }
+.testi-card img{ -webkit-user-drag:none;  pointer-events: none; }
+
+
+
